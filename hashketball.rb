@@ -241,16 +241,39 @@ def most_points_scored
       end
     }
   }
+  best_player
 end
 
 def winning_team
-  
+  winning_point = 0
+  winning_team = ""
+  game_hash.each{ |k, v|
+    total = 0
+    v[:players].each{ |value| 
+      total += value[:points]
+    }
+    if total > winning_point
+      winning_point = total
+      winning_team = v[:team_name]
+    end
+  }
+  winning_team
 end
 
 def player_with_longest_name
-  
+  max_length = 0
+  player = ""
+  game_hash.each { |k, v|
+    v[:players].each{ |value| 
+      if value[:name].length > max_length
+        max_length = value[:name].length
+        player = value[:name]
+      end
+    }
+  }
+  player
 end
 
 def long_name_steals_a_ton
-  
+  game_hash.each{ }
 end
