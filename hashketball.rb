@@ -208,6 +208,7 @@ end
 
 def big_shoe_rebounds
   max = 0
+  rebounds = 0
   game_hash.each{ |k, v|
     v[:players].each{ |value|
       if value[:shoe] > max
@@ -217,6 +218,9 @@ def big_shoe_rebounds
   }
   
   game_hash.each{ |k, v| 
-    
+    v[:players].each{ |value| 
+      if value[:shoe] == max
+        value[:]
+    }
   }
 end
