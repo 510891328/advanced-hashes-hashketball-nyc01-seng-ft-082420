@@ -214,6 +214,9 @@ def big_shoe_rebounds
         max = value[:shoe]
       end
     }
-    binding.pry
+  }
+  
+  game_hash.each{ |k, v| 
+    
   }
 end
