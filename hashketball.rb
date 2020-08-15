@@ -265,11 +265,10 @@ def player_with_longest_name
   player = ""
   game_hash.each { |k, v|
     v[:players].each{ |value| 
-      binding.pry
       if value[:player_name].length > max_length
         binding.pry
-        max_length = value[:name].length
-        player = value[:name]
+        max_length = value[:player_name].length
+        player = value[:player_name]
       end
     }
   }
@@ -283,13 +282,13 @@ def long_name_steals_a_ton
   most_steals_player = ""
   game_hash.each{ |k, v|
     v[:players].each{ |value|
-      if value[:name].to_s.length > max_length
-        max_length = value[:name].to_s.length
-        max_length_player = value[:name]
+      if value[:player_name].length > max_length
+        max_length = value[:player_name].to_s.length
+        max_length_player = value[:player_name]
       end
       if value[:steals] > most_steals
         most_steals = value[:steals]
-        most_steals_player = value[:name]
+        most_steals_player = value[:player_name]
       end
     }
   }
