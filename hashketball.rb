@@ -236,7 +236,7 @@ def most_points_scored
       end
     }
     v[:players].each{ |value|
-      if value[:points] == max
+      if value[:points] == most_points
         best_player << value[:player_name]
       end
     }
