@@ -1,4 +1,6 @@
 # Write your code below game_hash
+require "pry"
+
 def game_hash
   {
     home: {
@@ -126,4 +128,80 @@ def game_hash
   }
 end
 
-# Write code here
+def num_points_scored(player)
+  num = -1
+  game_hash.each { |k, v|
+    v[:players].each { |value|
+      if value[:player_name] == player
+        num = value[:points]
+      end
+    }
+  }
+  if num != -1
+    num
+  else
+    "Player Not Found"
+  end
+end
+
+def shoe_size(player)
+  num = -1
+  game_hash.each { |k, v|
+    v[:players].each { |value|
+      if value[:player_name] == player
+        num = value[:shoe]
+      end
+    }
+  }
+  if num != -1
+    num
+  else
+    "Player Not Found"
+  end
+end
+
+def team_colors(team_name)
+  color = []
+  game_hash.each{ |k, v|
+    if v[:team_name] == team_name
+      color = v[:colors]
+    end
+  }
+  if color != []
+    color
+  else
+    "Team Is Not Found"
+  end
+end
+
+def team_names
+  team_name = []
+  game_hash.each{ |k, v|
+    team_name << v[:team_name]
+  }
+  team_name
+end
+
+def player_numbers(team_name)
+  player_number = []
+  game_hash.each { |k, v|
+   if v[:team_name] == team_name
+     v[:players].each { |value|
+       player_number << value[:number]
+     }
+   end
+  }
+  player_number
+end
+
+def player_stats(player)
+  stat = {}
+  game_hash.each { |k, v| 
+    v[:players].each { |i, value| 
+      if v[:player_name] == player
+        stat = v[i]
+      end
+    }
+  }
+  stat
+end
