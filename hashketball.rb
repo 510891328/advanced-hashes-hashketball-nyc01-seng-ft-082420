@@ -225,3 +225,24 @@ def big_shoe_rebounds
   }
   rebounds
 end
+
+def most_points_scored
+  most_points = 0
+  best_player = ""
+  game_hash.each{ |k, v|
+    v[:players].each{ |value|
+      if value[:points] > most_points
+        max = value[:shoe]
+      end
+    }
+  }
+end
+
+def winning_team
+end
+
+def player_with_longest_name
+end
+
+def long_name_steals_a_ton
+end
