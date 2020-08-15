@@ -216,11 +216,12 @@ def big_shoe_rebounds
       end
     }
   }
-  
   game_hash.each{ |k, v| 
     v[:players].each{ |value| 
       if value[:shoe] == max
-        value[:]
+        rebounds = value[:rebounds]
+      end
     }
   }
+  rebounds
 end
