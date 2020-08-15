@@ -232,7 +232,7 @@ def most_points_scored
   game_hash.each{ |k, v|
     v[:players].each{ |value|
       if value[:points] > most_points
-        max = value[:shoe]
+        most_points = value[:shoe]
       end
     }
     v[:players].each{ |value|
