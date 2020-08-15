@@ -276,8 +276,20 @@ end
 
 def long_name_steals_a_ton
   max_length = 0
+  max_length_player = ""
   most_steals = 0
+  most_steals_player = ""
   game_hash.each{ |k, v|
-    v[:players].each{}
+    v[:players].each{ |value|
+      if value[:name].length > max_length
+        max_length = value[:name].length
+        max_length_player = value[:name]
+      end
+      if value[:steals] > most_steals
+        most_steals = value[:steals]
+        most_steals_player = value[:name]
+      end
+    }
   }
+  most_steals_player == max_length_player ? true : false
 end
