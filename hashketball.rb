@@ -201,7 +201,6 @@ def player_stats(player)
       if i[:player_name] == player
         stat = i
       end
-      binding.pry
     }
   }
   stat
