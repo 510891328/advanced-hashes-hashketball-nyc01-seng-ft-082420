@@ -242,6 +242,7 @@ def most_points_scored
     }
   }
   best_player
+  binding.pry
 end
 
 def winning_team
