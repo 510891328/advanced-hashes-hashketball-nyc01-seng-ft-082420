@@ -275,5 +275,9 @@ def player_with_longest_name
 end
 
 def long_name_steals_a_ton
-  game_hash.each{ }
+  max_length = 0
+  most_steals = 0
+  game_hash.each{ |k, v|
+    v[:players].each{}
+  }
 end
