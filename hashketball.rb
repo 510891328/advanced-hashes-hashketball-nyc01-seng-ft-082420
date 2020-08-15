@@ -199,7 +199,7 @@ def player_stats(player)
   game_hash.each { |k, v| 
     v[:players].each { |i, value| 
       if v[:player_name] == player
-        stat = v[i]
+        stat = i
       end
       binding.pry
     }
