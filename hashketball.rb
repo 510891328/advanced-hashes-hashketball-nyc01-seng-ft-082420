@@ -205,3 +205,14 @@ def player_stats(player)
   }
   stat
 end
+
+def big_shoe_rebounds
+  max = 0
+  game_hash.each{ |k, v|
+    v[:players].each{ |value|
+      if value[:shoe] > max
+        max = value[:shoe]
+      end
+    }
+    binding.pry
+  }
