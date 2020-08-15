@@ -241,6 +241,7 @@ def most_points_scored
       end
     }
   }
+  binding.pry
 end
 
 def winning_team
